@@ -76,16 +76,31 @@ curve(dpois(x, 1.83, log = FALSE),add=T, col="red")
 # Task 1.4
 vec_min<-mydata$Minutes
 vec_diff<-rep(0, length(vec_min)-1)
+# 
 for (i in seq(1, length(vec_min)-1)){
    vec_diff[i]=vec_min[i+1]-vec_min[i]
 }
+a_exp = rexp(44,0.03)
+hist(a_exp,main="Distribution times between births " 
+     ,xlab="diff between birth", col=rgb(248/255,180/255,0))
+hist(vec_diff, add=T, col=rgb(44/255,120/255,108/255) )
+
 hist(vec_diff)
+hist(a_exp)
+
 
 # Task1.5
-t<-subset(x = mydata, Sex == 1, select = c(Weight))
+# boys
+t<-subset(x = mydata, Sex == 1, select = c(Weight)) 
+# girls
 t1<-subset(x = mydata, Sex == 0, select = c(Weight))
 hist(t$Weight)  
 hist(t1$Weight)
+
+hist(t$Weight,main="Distribution of weight by Sex " 
+     ,xlab="Weight of boys", col=rgb(248/255,180/255,0), freq=FALSE)
+hist(t1$Weight, main="Distribution of weight by Sex " ,xlab="weight of girls", col=rgb(44/255,120/255,108/255), freq = FALSE )
+
 
 summary(t$Weight) 
 summary(t1$Weight)
