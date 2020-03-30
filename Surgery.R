@@ -25,3 +25,15 @@ binom.test(success
             , p = 0.7
             , alternative = "two.sided"
             , conf.level = 0.95)
+
+binom.test(48
+           , 100
+           , p = 0.5
+           , alternative = "two.sided"
+           , conf.level = 0.95)
+
+binom.test(8
+           , 10
+           , p = 0.5
+           , alternative = "two.sided"
+           , conf.level = 0.95)
